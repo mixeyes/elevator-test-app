@@ -7,7 +7,7 @@ const ConfigPage = lazy(() => import('../pages/ConfigPage'));
 const ElevatorsPage = lazy(() => import('../pages/ElevatorsPage'));
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
 
-function App() {
+export const App = () => {
   return (
     <>
       <GlobalStyle />
@@ -24,6 +24,4 @@ function App() {
       </Suspense>
     </>
   );
-}
-
-export default App;
+};

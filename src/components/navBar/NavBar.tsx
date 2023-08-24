@@ -3,7 +3,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { NavContainer, NavItemStyled } from './styles';
 
 export const NavBar = () => {
-  let location = useLocation();
+  const location = useLocation();
   return (
     <NavContainer>
       <NavItemStyled isActive={location.pathname === '/'}>
@@ -13,7 +13,7 @@ export const NavBar = () => {
         <NavLink to="/elevators">Elevators</NavLink>
       </NavItemStyled>
       <NavItemStyled
-        isActive={location.pathname === '/404' || location.pathname !== '/' && location.pathname !== '/elevators'}
+        isActive={location.pathname === '/404' || (location.pathname !== '/' && location.pathname !== '/elevators')}
       >
         <NavLink to="/404"> 404</NavLink>
       </NavItemStyled>
