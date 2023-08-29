@@ -1,2 +1,2 @@
 export { elevatorReducer } from './elevator/elevatorSlice';
-export { buildingReducer, allBuildings } from './building/buildingSlice';
+export { buildingReducer, allBuildings, addElevator, addBuilding } from './building/buildingSlice';

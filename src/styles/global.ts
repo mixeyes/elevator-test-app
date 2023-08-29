@@ -19,8 +19,9 @@ export default createGlobalStyle`
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  /* display: flex;
+  flex-direction: column; */
+  /* place-items: center; */
   min-width: 320px;
   min-height: 100vh;
 }

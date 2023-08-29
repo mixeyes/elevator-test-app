@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Logo } from '../../Logo';
+import { Logo } from '../../logo/Logo';
 
 export const Container = styled.header`
   display: flex;
@@ -23,7 +23,8 @@ export const HeaderStyled = styled.div`
 `;
 
 export const LogoStyled = styled(Logo)`
-  width: 6em;
+  height: 7vh;
+  width: 7vh;
   padding: 0.2em 0.1em;
   cursor: pointer;
 
@@ -37,8 +38,8 @@ export const LogoStyled = styled(Logo)`
 export const Label = styled.h1`
   font-size: 5vh;
   line-height: 1.1;
-  background-image: linear-gradient(to top left, #553c9a, #ee4b2b);
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
+  /* background-image: linear-gradient(to top left, #553c9a, #ee4b2b); */
+  /* color: transparent; */
+  /* background-clip: text; */
+  /* -webkit-background-clip: text; */
 `;

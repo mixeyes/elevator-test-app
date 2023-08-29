@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import { GlobalStyle } from '../styles';
 import { Layout } from '../components';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { Container } from "./appStyles";
 
 const ConfigPage = lazy(() => import('../pages/ConfigPage'));
 const ElevatorsPage = lazy(() => import('../pages/ElevatorsPage'));

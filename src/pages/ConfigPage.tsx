@@ -1,22 +1,31 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { allBuildings } from '../stores';
+import { allBuildings, addBuilding } from '../stores';
+import { Container, Label } from "./configPageStyles";
+import { ItemList, Button } from '../components';
+import { AddBuildingModal } from '../modules';
 
 const ConfigPage = () => {
+  const [isModalOpened, setIsModalOpened] = useState(false);
   const buildings = useSelector(allBuildings);
+  const dispatch = useDispatch();
+  // dispatch(addBuilding({id: 'weyriuqetrut',floorCount: 9, elevatorsIds: [''], name: 'test building'}))
+  const handleAddBuilding = () => {};
+
   return (
     <>
-      <h1>Config page</h1>
-      {Object.entries(buildings).map(([key, value]) => (
-        <>
-          <div>
-            <span>{value.id}</span>
-          </div>
-          <div>
-            <span>{value.name}</span>
-          </div>
-        </>
-      ))}
+      <Container>
+        <Label>Config page</Label>
+        <Button
+          onClick={() => {
+            setIsModalOpened(!isModalOpened);
+          }}
+          label="Add new building"
+        />
+
+        <ItemList items={buildings} />
+      </Container>
+      <AddBuildingModal isOpen={isModalOpened} handleClose={() => setIsModalOpened(false)} >first modal window</AddBuildingModal>
     </>
   );
 };
