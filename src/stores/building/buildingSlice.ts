@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, current, PayloadAction } from '@reduxjs/toolkit';
 import { RootState, AppThunk } from '../../app/store';
-import { IBuilding, IBuildings } from '../../intefaces';
+import { IBuilding, IBuildings } from '../../utils/intefaces';
 
 const initialState: IBuildings = {
   bId1: { id: 'bId1', elevatorsIds: ['aId1'], floorCount: 9, name: 'building 1' },
@@ -22,6 +22,6 @@ export const buildingSlice = createSlice({
 
 export const { addBuilding, addElevator } = buildingSlice.actions;
 
-export const allBuildings = (state: IBuildings) => state.buildings;
+export const allBuildings = (state: IBuildings) => state.building;
 
 export const buildingReducer = buildingSlice.reducer;

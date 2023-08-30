@@ -1,1 +1,1 @@
-export { AddBuildingModal  } from './popUpWindow/AddBuildingForm';
+export { AddBuildingModal } from './popUps/addBuilding/AddBuildingForm';
