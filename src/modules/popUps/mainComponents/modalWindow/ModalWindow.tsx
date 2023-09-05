@@ -1,9 +1,8 @@
 import { FC, ReactNode, useEffect, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { ModalPortal } from './ModalPortal';
-import { Content, ModalHeader, ModalLabel } from './styles';
-import './modal.css';
-import { Button } from '../../components';
+import { Content, Modal, ModalHeader, ModalLabel } from './styles';
+import { CloseButton } from '../closeButton/CloseButton';
 
 interface IAddBuildingModal {
   children: ReactNode;
@@ -25,13 +24,15 @@ export const ModalWindow: FC<IAddBuildingModal> = ({ children, isOpen, windowNam
   return (
     <ModalPortal wrapperId="react-portal-modal-container">
       <CSSTransition in={isOpen} timeout={{ enter: 0, exit: 300 }} unmountOnExit classNames="modal" nodeRef={nodeRef}>
-        <div className="modal" ref={nodeRef}>
-          <ModalHeader>
-            <ModalLabel>{windowName}</ModalLabel>
-            <Button onClick={handleClose} label="Close" />
-          </ModalHeader>
-          <Content>{children}</Content>
-        </div>
+        <Modal ref={nodeRef}>
+          <Content>
+            <ModalHeader>
+              <ModalLabel>{windowName}</ModalLabel>
+              <CloseButton onClick={handleClose} />
+            </ModalHeader>
+            {children}
+          </Content>
+        </Modal>
       </CSSTransition>
     </ModalPortal>
   );

@@ -4,7 +4,7 @@ import { Container, ElevatorsCount, Floor, Label } from './itemStyle';
 import { Button } from '..';
 
 export const Item: FC<{ data: IBuilding }> = ({ data }) => {
-  const handleBuildingChange = (e: MouseEvent<MouseEvent>) => {
+  const handleBuildingChange = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
   };
   return (
@@ -16,7 +16,7 @@ export const Item: FC<{ data: IBuilding }> = ({ data }) => {
         <span>{data.floorCount}</span>
       </Floor>
       <ElevatorsCount>
-        <span>{data.elevatorsIds.length}</span>
+        <span>{data.elevatorIds.length}</span>
       </ElevatorsCount>
       <Button onClick={handleBuildingChange} label="Change building" />
     </Container>

@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, current, PayloadAction } from '@reduxjs/toolkit';
 import { RootState, AppThunk } from '../../app/store';
-import { IElevator } from '../../utils/intefaces/IElevator';
+import { IElevator } from '../../utils/intefaces';
 
 export interface IElevatorsState {
   [key: string]: IElevator;
@@ -67,5 +67,7 @@ export const elevatorSlice = createSlice({
   //     });
   //   },
 });
+
+export const { addElevator } = elevatorSlice.actions;
 
 export const elevatorReducer = elevatorSlice.reducer;
