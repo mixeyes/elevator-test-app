@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { StyledButton } from './styles';
-import { OnClickFunction } from '../../utils/intefaces';
+import { OnClickFunction } from '../../utils';
 
 interface IButton {
   label: string;

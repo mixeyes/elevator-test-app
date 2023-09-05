@@ -1,6 +1,5 @@
-import { createAsyncThunk, createSlice, current, PayloadAction } from '@reduxjs/toolkit';
-import { RootState, AppThunk } from '../../app/store';
-import { IBuilding, IBuildings } from '../../utils/intefaces';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { IBuilding, IBuildings } from '../../utils';
 
 const initialState: IBuildings = {
   bId1: { id: 'bId1', elevatorIds: ['aId1'], floorCount: 9, name: 'building 1' },

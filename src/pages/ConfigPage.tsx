@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { allBuildings, addBuilding } from '../stores';
+import { useSelector } from 'react-redux';
+import { allBuildings } from '../stores';
 import { Container, Label } from './configPageStyles';
 import { ItemList, Button } from '../components';
 import { AddBuildingModal } from '../modules';
-import { IBuildings } from '../utils/intefaces';
 
 const ConfigPage = () => {
   const [isModalOpened, setIsModalOpened] = useState(false);

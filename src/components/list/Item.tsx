@@ -1,5 +1,5 @@
 import React, { FC, MouseEvent } from 'react';
-import { IBuilding } from '../../utils/intefaces';
+import { IBuilding } from '../../utils';
 import { Container, ElevatorsCount, Floor, Label } from './itemStyle';
 import { Button } from '..';
 

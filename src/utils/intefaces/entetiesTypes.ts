@@ -12,5 +12,5 @@ export interface IElevator {
 }
 
 export interface IBuildings {
-    [key: string]: IBuilding;
-};
+  [key: string]: IBuilding;
+}

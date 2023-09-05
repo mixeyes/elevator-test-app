@@ -7,5 +7,5 @@ export const Container = styled.div`
   align-content: stretch;
   gap: 1vh 1vw;
   width: 100%;
-  margin: '0.5vw'
+  margin: '0.5vw';
 `;

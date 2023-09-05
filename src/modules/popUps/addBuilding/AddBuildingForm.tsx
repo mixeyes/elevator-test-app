@@ -25,23 +25,23 @@ export const AddBuildingModal: FC<IAddBuildingModal> = ({ isOpen, handleClose })
   const buildingId = uuidv4();
   const [elevatorIds, setElevatorsId] = useState<string[]>([]);
   const dispatch = useDispatch();
-    const {
-      register,
-      handleSubmit,
-      formState: { errors },
-    } = useForm<FormData>({
-      resolver: yupResolver(schema),
-    });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: yupResolver(schema),
+  });
 
-   const handleAddElevators = (e: MouseEvent<HTMLButtonElement>) => {
+  const handleAddElevators = (e: MouseEvent<HTMLButtonElement>) => {
     const id = uuidv4();
-    e.preventDefault()
-    dispatch(addElevator({  id,  currentFloor: 0,  status: 'stopped'}));
+    e.preventDefault();
+    dispatch(addElevator({ id, currentFloor: 0, status: 'stopped' }));
     setElevatorsId([...elevatorIds, id]);
-   };
+  };
 
   const onSubmit = handleSubmit((data: FormData) => {
-    dispatch(addBuilding({...data, id: buildingId, elevatorIds }));
+    dispatch(addBuilding({ ...data, id: buildingId, elevatorIds }));
     handleClose();
   });
 

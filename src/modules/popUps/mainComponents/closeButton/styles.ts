@@ -33,7 +33,7 @@ export const Button = styled.button`
       right: 0;
       height: 6px;
       background: #fff;
-      border-radius:6px;
+      border-radius: 6px;
     }
 
     &:before {

@@ -11,7 +11,7 @@ interface IAddBuildingModal {
   handleClose(): void;
 }
 
-export const ModalWindow: FC<IAddBuildingModal> = ({ children, isOpen, windowName,  handleClose }) => {
+export const ModalWindow: FC<IAddBuildingModal> = ({ children, isOpen, windowName, handleClose }) => {
   const nodeRef = useRef(null);
   useEffect(() => {
     const closeOnEscapeKey = (e: KeyboardEvent) => (e.key === 'Escape' ? handleClose() : null);

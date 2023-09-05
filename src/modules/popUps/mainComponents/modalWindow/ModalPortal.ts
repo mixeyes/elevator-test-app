@@ -13,7 +13,7 @@ interface IModalPortal {
   wrapperId: string;
 }
 
-export const  ModalPortal: FC<IModalPortal> = ({ children, wrapperId = 'react-portal-wrapper' }) => {
+export const ModalPortal: FC<IModalPortal> = ({ children, wrapperId = 'react-portal-wrapper' }) => {
   const [wrapperElement, setWrapperElement] = useState<Element | null>(null);
 
   useLayoutEffect(() => {
@@ -39,4 +39,4 @@ export const  ModalPortal: FC<IModalPortal> = ({ children, wrapperId = 'react-po
   if (wrapperElement === null) return null;
 
   return createPortal(children, wrapperElement);
-}
+};

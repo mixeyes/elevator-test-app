@@ -16,7 +16,7 @@ export const StyledButton = styled.button`
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  
+
   :hover {
     background-image: linear-gradient(-180deg, #1d95c9 0%, #17759c 100%);
   }
@@ -27,4 +27,3 @@ export const StyledButton = styled.button`
     }
   }
 `;
-
