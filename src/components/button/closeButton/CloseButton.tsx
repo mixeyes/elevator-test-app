@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 // import './closeButtonStyles.css';
-import { OnClickFunction } from '../../../../utils';
+import { OnClickFunction } from '../../../utils';
 import { Button, Container } from './styles';
 
 interface ICloseButton {

@@ -1,2 +1,2 @@
-export { ModalWindow } from './modalWindow/ModalWindow';
+export { Button } from './Button';
 export { CloseButton } from './closeButton/CloseButton';

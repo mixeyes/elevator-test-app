@@ -1,14 +1,20 @@
 import React, { FC } from 'react';
 import { StyledButton } from './styles';
-import { OnClickFunction } from '../../utils';
+import { BUTTON_TYPES, OnClickFunction } from '../../utils';
+
 
 interface IButton {
   label: string;
-  onClick: OnClickFunction;
+  onClick?: OnClickFunction;
+  types?: BUTTON_TYPES;
+  size?: {
+    width?: string,
+    height?: string
+  }
 }
-export const Button: FC<IButton> = ({ label, onClick }) => {
+export const Button: FC<IButton> = ({ label, onClick, types = BUTTON_TYPES.Button, size }) => {
   return (
-    <StyledButton onClick={onClick} role="button">
+    <StyledButton onClick={onClick} role="button" type={types} size={size}>
       {label}
     </StyledButton>
   );

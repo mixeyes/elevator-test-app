@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
-export const StyledButton = styled.button`
+export const StyledButton = styled.button<{size?: {
+    width?: string,
+    height?: string
+  }}>`
   background-image: linear-gradient(-180deg, #37aee2 0%, #1e96c8 100%);
   border-radius: 0.5rem;
   box-sizing: border-box;
@@ -10,7 +13,8 @@ export const StyledButton = styled.button`
   justify-content: center;
   padding: 1rem 1.75rem;
   text-decoration: none;
-  width: 100%;
+  width: ${(props) => props.size?.width ? props.size.width : '100%'};
+  height: ${(props) => props.size?.height ? props.size.height : null};
   border: 0;
   cursor: pointer;
   user-select: none;

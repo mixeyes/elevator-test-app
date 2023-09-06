@@ -21,6 +21,6 @@ export const buildingSlice = createSlice({
 
 export const { addBuilding, addElevatorToBuilding } = buildingSlice.actions;
 
-export const allBuildings = (state: IBuildings) => state.building;
+export const allBuildings = (state: {building: IBuildings}) => state.building;
 
 export const buildingReducer = buildingSlice.reducer;

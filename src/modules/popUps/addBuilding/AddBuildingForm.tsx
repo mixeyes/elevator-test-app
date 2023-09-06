@@ -1,12 +1,13 @@
-import { FC, MouseEvent, useState } from 'react';
+import { FC, MouseEvent, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addBuilding, addElevator } from '../../../stores';
-import { ModalWindow } from '../mainComponents';
-import { Button } from '../../../components';
+import { ModalWindow, Button } from '../../../components';
 import { v4 as uuidv4 } from 'uuid';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { Form } from './styles';
+import { BUTTON_TYPES } from '../../../utils/constants';
 
 interface IAddBuildingModal {
   isOpen: boolean;
@@ -29,9 +30,18 @@ export const AddBuildingModal: FC<IAddBuildingModal> = ({ isOpen, handleClose })
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<FormData>({
     resolver: yupResolver(schema),
+    defaultValues: {
+      name: '',
+      floorCount: 0,
+    },
   });
+
+  useEffect(() => () => {
+    reset();
+  }, [isOpen]);
 
   const handleAddElevators = (e: MouseEvent<HTMLButtonElement>) => {
     const id = uuidv4();
@@ -47,16 +57,16 @@ export const AddBuildingModal: FC<IAddBuildingModal> = ({ isOpen, handleClose })
 
   return (
     <ModalWindow windowName="Add new building" isOpen={isOpen} handleClose={handleClose}>
-      <form onSubmit={onSubmit}>
+      <Form onSubmit={onSubmit}>
         <input {...register('name')} placeholder="building name" />
         {errors?.name && <p>{errors.name.message}</p>}
 
         <input {...register('floorCount')} placeholder="0" type="number" />
         {errors?.floorCount && <p>{errors.floorCount.message}</p>}
-        <Button onClick={handleAddElevators} label="add elevator" />
-
-        <input type="submit" />
-      </form>{' '}
+        <Button onClick={handleAddElevators} label="add elevator" size={{ width: '20vw' }} />
+        <br />
+        <Button types={BUTTON_TYPES.Submit} label="add building" size={{ width: '20vw' }} />
+      </Form>
     </ModalWindow>
   );
 };

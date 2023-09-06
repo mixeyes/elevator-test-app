@@ -2,7 +2,7 @@ import { FC, ReactNode, useEffect, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { ModalPortal } from './ModalPortal';
 import { Content, Modal, ModalHeader, ModalLabel } from './styles';
-import { CloseButton } from '../closeButton/CloseButton';
+import { CloseButton } from '../button';
 
 interface IAddBuildingModal {
   children: ReactNode;
