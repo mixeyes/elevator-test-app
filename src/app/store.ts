@@ -3,8 +3,8 @@ import { elevatorReducer, buildingReducer } from '../stores';
 
 export const store = configureStore({
   reducer: {
-    elevators: elevatorReducer,
-    buildings: buildingReducer,
+    elevator: elevatorReducer,
+    building: buildingReducer,
   },
 });
 
