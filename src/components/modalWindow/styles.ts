@@ -23,7 +23,7 @@ export const Content = styled.div`
 `;
 
 export const ModalLabel = styled.h3`
-  font-size: 5vh;
+  font-size: 2rem;
   line-height: 1.1;
 `;
 

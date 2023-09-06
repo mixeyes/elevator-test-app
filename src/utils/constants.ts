@@ -3,3 +3,8 @@ export enum BUTTON_TYPES {
   Button = 'button',
   Reset = 'reset',
 }
+
+export enum INPUT_TYPES {
+  Text= 'text',
+  Number = 'number',
+}
