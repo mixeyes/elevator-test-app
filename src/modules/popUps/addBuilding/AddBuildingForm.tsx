@@ -28,7 +28,6 @@ export const AddBuildingModal: FC<IAddBuildingModal> = ({ isOpen, handleClose })
   const [elevatorIds, setElevatorsId] = useState<string[]>([]);
   const dispatch = useDispatch();
   const {
-    control,
     register,
     handleSubmit,
     formState: { errors },
@@ -43,6 +42,7 @@ export const AddBuildingModal: FC<IAddBuildingModal> = ({ isOpen, handleClose })
 
   useEffect(() => () => {
     reset();
+    setElevatorsId([]);
   }, [isOpen]);
 
   const handleAddElevators = (e: MouseEvent<HTMLButtonElement>) => {
@@ -71,9 +71,17 @@ export const AddBuildingModal: FC<IAddBuildingModal> = ({ isOpen, handleClose })
         <Input
           register={register}
           name="floorCount"
-          placeholder="building name"
+          placeholder='0'
           type={INPUT_TYPES.Number}
           label="Enter floors count"
+          errorMessage={errors?.floorCount?.message}
+        />
+        <Input
+          name="elevatorCount"
+          placeholder="0"
+          type={INPUT_TYPES.Number}
+          label="Elevator count"
+          value={elevatorIds.length}
           errorMessage={errors?.floorCount?.message}
         />
         <Button onClick={handleAddElevators} label="add elevator" size={{ width: '20vw' }} />

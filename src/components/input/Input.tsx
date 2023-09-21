@@ -8,14 +8,19 @@ interface IInput {
   required?: boolean;
   placeholder?: string;
   type: INPUT_TYPES;
-  register: UseFormRegister<any>;
+  register?: UseFormRegister<any>;
   name: string;
   errorMessage?: string;
+  value?: string | number;
 }
-export const Input: FC<IInput> = ({ label, required, type = INPUT_TYPES.Text, placeholder, register, name, errorMessage }) => {
+export const Input: FC<IInput> = ({ label, required, type = INPUT_TYPES.Text, placeholder, register, name, errorMessage, value }) => {
   return (
     <FormControl>
-      <InputStyled type={type} required={required} {...register(name)} placeholder={placeholder} />
+      {register ? (
+        <InputStyled type={type} required={required} {...register(name)} placeholder={placeholder} />
+      ) : (
+        <InputStyled type={type} required={required} value={value} placeholder={placeholder} />
+      )}
       <Label>{label} </Label>
       {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </FormControl>

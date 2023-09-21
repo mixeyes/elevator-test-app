@@ -11,7 +11,7 @@ export const ModalHeader = styled.div`
 
 export const Content = styled.div`
   width: 50vw;
-  height: 50vh;
+  /* height: 50vh; */
   background-color: #282c34;
   color: #fff;
   display: flex;
