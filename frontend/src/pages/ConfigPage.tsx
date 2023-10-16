@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { allBuildings } from '../stores';
-import { Container, Label } from './configPageStyles';
+import { Container, Label } from './commonPageStyles';
 import { ItemList, Button } from '../components';
 import { AddBuildingModal } from '../modules';
 

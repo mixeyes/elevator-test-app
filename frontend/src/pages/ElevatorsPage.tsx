@@ -1,10 +1,20 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { allBuildings } from '../stores';
+import { Container, Label } from './commonPageStyles';
+import { SelectBuildings } from '../components';
+import { BuildingContainer } from '../modules';
 
 const ElevatorsPage = () => {
+  const buildings = useSelector(allBuildings);
+
+
   return (
-    <>
-      <h1>Elevators page</h1>
-    </>
+    <Container>
+      <Label>Elevators page</Label>
+      <SelectBuildings buildings={buildings}/>
+      <BuildingContainer />
+    </Container>
   );
 };
 
